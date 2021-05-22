@@ -1,0 +1,41 @@
+{% extends 'base_admin_page.html' %}
+
+{% block title%}RestBit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/cambiar-informacion-restaurante.css')}}">
+{% endblock %}
+
+{% block main %}
+  <main>
+    <div class="container">
+      <div class="titulo">
+        <p>Actualizar informacion restaurante</p>
+      </div>
+      <div class="main-content">
+        <picture>
+          <img src="{{restaurante.logo}}" alt="Logo restaurente">
+        </picture>
+        <div class="formulario">
+          <form action="">
+            <input type="text" name="nombre-restaurante" id="nombre-restaurante" placeholder="Nombre restaurante" value="{{restaurante.nombre_restaurante}}" required>
+            <input type="text" name="especialidad" id="especialidad" placeholder="Especialidad" value="{{restaurante.especialidad}}" required>
+            <input type="text" name="chef" id="chef" placeholder="Nombre chef principal" value="{{restaurante.chef_principal}}" required>
+            <label for="colores">Elige un color representativo de tu restaurante:</label>
+            <select name="colores" id="colores" required>
+            <option value="#FFF633">Amarillo</option>
+            <option value="#3374FF">Azul</option>
+            <option value="#FF333C">Rojo</option>
+            <option value="#28B463">Verde</option>
+            <option value="#FFC300">Naranja</option>
+            <option value="#000000">Negro</option>
+            <option value="#8E44AD">Morado</option>
+            </select>
+            <input type="url" name="logo" id="logo" placeholder="Url logo restaurante" value="{{restaurante.logo}}" required>
+            <input type="hidden" name="id-restaurante" value="{{restaurante.id}}">
+            <button type="submit">Actualizar restaurante</button>
+          </form>
+        </div>
+      </div>
+  </main>
+{% endblock %}

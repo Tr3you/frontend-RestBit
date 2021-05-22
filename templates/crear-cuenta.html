@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title%}Iniciar sesion Restbit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/crear-cuenta.css')}}">
+{% endblock %}
+
+{% block body %}
+  {% if status_code==200 %}
+  {% for mensaje in get_flashed_messages() %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center; font-size:15px; background-color:#04C100; color: white">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% else %}
+  {% for mensaje in get_flashed_messages() %}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align: center; font-size:15px; background-color: red; color: white">
+    <p>{{mensaje}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  
+    <main>
+      <div class="container main-content">
+        <div class="title-container">
+          <h1>Crear cuenta</h1>
+        </div>
+        <div class="formulario">
+          <form action="{{url_for('crear_cuenta')}}" method="post">
+            <input type="text" name="nombre-restaurante" id="nombrerestaurante" placeholder="Nombre restaurante" required>
+            <input type="text" name="especialidad" id="especialidad" placeholder="Especialidad" required>
+            <input type="text" name="chef" id="chef" placeholder="Nombre chef principal" required>
+            <label for="colores">Elige un color representativo de tu restaurante:</label>
+            <select name="colores" id="colores" required>
+            <option value="#FFF633">Amarillo</option>
+            <option value="#3374FF">Azul</option>
+            <option value="#FF333C">Rojo</option>
+            <option value="#28B463">Verde</option>
+            <option value="#FFC300">Naranja</option>
+            <option value="#000000">Negro</option>
+            <option value="#8E44AD">Morado</option>
+            </select>
+            <input type="url" name="logo" id="logo" placeholder="Url logo restaurante" required>
+            <input type="password" name="contraseña" id="contraseña_login" placeholder="Contraseña" required>
+            <button type="submit">Crear cuenta</button>
+          </form>
+          <div class="link-crear-cuenta">
+            <a href="{{url_for('login_restaurante')}}"><p>¿Ya tienes una cuenta? <b>login aqui.</b></p></a>
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock %}

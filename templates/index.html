@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title%}RestBit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main>
+      <div class="container main-content">
+        <div class="title-container">
+          <h1 class="main-title">RestBit</h1>
+        </div>
+        <div class="buttons">
+          <a class="button-fill" href="{{url_for('buscar_restaurante')}}">Quiero pedir algo</a>
+          <a class="button-outline" href="{{url_for('login_restaurante')}}">Soy un restaurante</a>
+        </div>
+      </div>
+    </main>
+{% endblock %}

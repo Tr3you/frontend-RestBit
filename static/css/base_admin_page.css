@@ -1,0 +1,80 @@
+body{
+    background-color: gainsboro;
+}
+
+header {
+    height: 55px;
+    background-color: #04C100;
+}
+
+.navegacion {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegacion .logo a {
+    text-decoration: none;
+    font-size: 3.5rem;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+
+.navegacion nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 10px 5px;
+    margin: 0px 5px;
+}
+
+.navegacion nav a:hover, .menu-toggle:hover{
+    border: 1px solid white;
+    border-style: dotted;
+}
+
+.navegacion nav .active-a {
+    color: #565656;
+}
+
+.navegacion .menu-toggle{
+    display: none;
+    padding: 5px;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.show{
+    height: 190px !important;
+}
+
+@media screen and (max-width:920px) {
+    .navegacion .menu-toggle{
+        display: block;
+    }
+
+    #menu {
+        background-color: #565656;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: .3s ease-out;
+    }
+
+    #menu ul a{
+        display: block;
+        text-align: center;
+        border-top: 1px solid rgb(102, 102, 102);
+    }
+
+    .navegacion nav .active-a {
+        color: #04C100;
+    }
+}

@@ -1,0 +1,93 @@
+
+body{
+    background-color: #04C100;
+}
+
+.mobile{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container{
+    text-align: center;
+    color: white;
+}
+
+.text-container h1{
+    font-size: 7rem;
+    font-family: 'Lobster', cursive;
+}
+
+.text-container p{
+    font-size: 2rem;
+}
+
+.formulario, form{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulario input{
+    display: block;
+    height: 40px;
+    width: 70%;
+    padding:10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #828282;
+}
+
+.formulario button{
+    width: 70%;
+    height: 40px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #565656;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.desktop{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop h5{
+    color: white;
+    font-size: 8rem;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.desktop p {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+      display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile {
+      display: none;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base_admin_page.css')}}">
+    <script src="https://use.fontawesome.com/136ccc5fac.js"></script>
+    {% block styles %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <div class="navegacion">
+            <div class="logo">
+              <a href="{{url_for('admin_page')}}">RestBit</a>
+            </div>
+            <nav id="menu">
+              <ul>
+                <a href="{{url_for('admin_page')}}">Inicio</a>
+                <a href="{{url_for('cambiar_informacion')}}">Cambiar informacion restaurante</a>
+                <a href="{{url_for('administrar_carta')}}">Administrar carta</a>
+                <a href="{{url_for('cambiar_password')}}">Cambiar contraseña</a>
+                <a href="">Cerrar sesion</a>
+              </ul>
+            </nav>
+            <div class="menu-toggle">
+              <i class="fa fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+    {% block main %}
+    {% endblock %}
+    <script src="{{url_for('static', filename='js/menu.js')}}"></script>
+</body>
+</html>

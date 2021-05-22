@@ -1,0 +1,17 @@
+.titulo{
+    font-size: 3rem;
+    color: #565656;
+    font-weight: 700;
+    margin-top: 40px;
+    text-transform: uppercase;
+}
+
+.main-content-text{
+    background-color: white;
+    padding: 20px 40px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.4rem;
+    color:#565656;
+    border-radius: 10px;
+}

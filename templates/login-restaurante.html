@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title%}Iniciar sesion Restbit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main>
+      <div class="container main-content">
+        <div class="title-container">
+          <h1>RestBit</h1>
+        </div>
+        <div class="formulario">
+          <form action="">
+            <input type="number" name="id-restaurante" id="id-restaurante_login" placeholder="Id restaurante" required>
+            <input type="password" name="contraseña" id="contraseña_login" placeholder="Contraseña" required>
+            <button type="submit">Login</button>
+          </form>
+          <div class="link-crear-cuenta">
+            <a href="{{url_for('crear_cuenta')}}"><p>¿No Tienes una cuenta? <b>Crea una aqui.</b></p></a>
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock %}

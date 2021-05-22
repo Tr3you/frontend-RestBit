@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title%}RestBit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/buscar-restaurante.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main>
+      <div class="container">
+          <div class="desktop">
+            <h5>We're sorry</h5>
+            <p>Esta pagina solo puede ser accedida desde dispositivos mobiles</p>
+          </div>
+      </div>
+      <div class="mobile">
+        <div class="text-container">
+            <h1>RestBit</h1>
+            <p>Bienvenido de vuelta!</p>
+        </div>
+        <div class="formulario">
+            <form action="">
+                <input type="number" name="id-restaurante" id="id-restaurante" placeholder="Id restaurante" min="10000" max="99999">
+                <input type="text" name="numero-mesa" id="numero-mesa" placeholder="Numero de mesa">
+                <button type="submit">Go!</button>
+            </form>
+        </div>
+    </div>
+    </main>
+{% endblock %}
