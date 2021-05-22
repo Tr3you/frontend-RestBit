@@ -29,7 +29,7 @@
           <h1>Crear cuenta</h1>
         </div>
         <div class="formulario">
-          <form action="{{url_for('crear_cuenta')}}" method="post">
+          <form action="{{url_for('rutas_sesiones.crear_cuenta')}}" method="post">
             <input type="text" name="nombre-restaurante" id="nombrerestaurante" placeholder="Nombre restaurante" required>
             <input type="text" name="especialidad" id="especialidad" placeholder="Especialidad" required>
             <input type="text" name="chef" id="chef" placeholder="Nombre chef principal" required>
@@ -48,7 +48,7 @@
             <button type="submit">Crear cuenta</button>
           </form>
           <div class="link-crear-cuenta">
-            <a href="{{url_for('login_restaurante')}}"><p>¿Ya tienes una cuenta? <b>login aqui.</b></p></a>
+            <a href="{{url_for('rutas_sesiones.login_restaurante')}}"><p>¿Ya tienes una cuenta? <b>login aqui.</b></p></a>
           </div>
         </div>
       </div>
