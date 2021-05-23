@@ -21,7 +21,7 @@ def login_restaurante():
                     'password': request.form['contraseña']
                 }
                 request_microservicio_usuarios = requests.get(
-                    'http://localhost:7071/api/HttpTrigger2', json=user)
+                    'https://microservicio-usuarios.azurewebsites.net/api/httptrigger2', json=user)
                 if (request_microservicio_usuarios.status_code == 200):
                     session['user_logged'] = id_restaurante
                     return redirect(url_for('rutas_restaurante.admin_page'))
@@ -66,9 +66,9 @@ def crear_cuenta():
                 "password": request.form['contraseña']
             }
             request_microservicio_usuarios = requests.post(
-                'http://localhost:7071/api/HttpTrigger1', json=usuario)
+                'https://microservicio-usuarios.azurewebsites.net/api/httptrigger1', json=usuario)
             request_microservicio_restaurante = requests.post(
-                'http://localhost:7070/api/HttpTrigger1', json=restaurante)
+                'https://microservicio-restaurante.azurewebsites.net/api/httptrigger1', json=restaurante)
             if (request_microservicio_usuarios.status_code == 200
                     and request_microservicio_restaurante.status_code == 200):
                 flash(

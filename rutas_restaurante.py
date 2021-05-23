@@ -23,7 +23,7 @@ def cambiar_informacion():
     if 'user_logged' in session:
         if (request.method == 'GET'):
             restaurante = {'id_restaurante': session['user_logged']}
-            request_microservicio_restaurante = requests.get('http://localhost:7070/api/HttpTrigger3', json=restaurante)
+            request_microservicio_restaurante = requests.get('https://microservicio-restaurante.azurewebsites.net/api/httptrigger3', json=restaurante)
             context = {'restaurante': json.loads(request_microservicio_restaurante.text)}
             return render_template('cambiar-informacion-restaurante.html', **context)
         if (request.method == 'POST'):
@@ -36,7 +36,7 @@ def cambiar_informacion():
                 "chef_principal": request.form['chef'],
                 "especialidad": request.form['especialidad']
                 }
-                request_microservicio_restaurante = requests.put('http://localhost:7070/api/HttpTrigger2', json=restaurante)
+                request_microservicio_restaurante = requests.put('https://microservicio-restaurante.azurewebsites.net/api/httptrigger2', json=restaurante)
                 if(request_microservicio_restaurante.status_code==200):
                     flash('Informacion actualizada con exito')
                     context = {'status_code': 200}
@@ -75,7 +75,7 @@ def cambiar_password():
                     'new_password': request.form['password2'],
                     'id_restaurante': session['user_logged']
                 }
-                request_microservicio_usuarios = requests.put('http://localhost:7071/api/HttpTrigger3', json=change_password)
+                request_microservicio_usuarios = requests.put('https://microservicio-usuarios.azurewebsites.net/api/httptrigger3', json=change_password)
                 if(request_microservicio_usuarios.status_code==200):
                     flash('Su contraseña a sido actualizada exitosamente')
                     context = {'status_code': 200}

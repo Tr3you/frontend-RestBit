@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title%}Crear cuenta Restbit{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/feed-restaurante.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <input type="hidden" name="color" id="color" value="{{restaurante.color}}">
+        <div class="container-content">
+            <div class="flex-content">
+                <img class="logo" src="{{restaurante.logo}}" alt="Logo restaurante">
+                <h1 id="nombre_restaurante">{{restaurante.nombre_restaurante}}</h1>
+                <div class="main-text-content">
+                    <p><strong>Chef principal:</strong> {{restaurante.chef_principal}}</p>
+                    <p><strong>Especialidad:</strong> {{restaurante.especialidad}}</p>
+                </div>
+            </div>
+            <div class="titulo-carta">
+                <p id="titulo_carta">Carta</p>
+            </div>
+        </div>
+    </main>
+    <script src="{{url_for('static', filename='js/cambiar-color.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+.container-contet{
+    width: 100vw;
+    margin: 0px 5px;
+}
+
+.flex-content{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.flex-content .logo{
+    width: 150px;
+    margin-top: 10px;
+}
+
+.flex-content h1{
+    font-size: 3.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-text-content p{
+    font-size: 1.6rem;
+    text-align: center;
+    color: black;
+    margin: 0 5px;
+}
+
+.titulo-carta {
+    font-size: 3.8rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 500px) {
+    .titulo-carta, .flex-content h1{
+        font-size: 5.8rem;
+    }
+
+    .flex-content{
+        height: 450px;
+    }
+
+    .flex-content p{
+        font-size: 2rem;
+    }
+
+    .flex-content .logo {
+        width: 200px;
+        margin-top: 20px;
+    }
+}
