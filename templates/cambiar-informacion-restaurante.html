@@ -7,8 +7,27 @@
 {% endblock %}
 
 {% block main %}
+
+  {% if status_code==500 %}
+  {% for mensaje in get_flashed_messages() %}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert"
+    style="text-align: center; font-size:15px; background-color: red; color: white">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% else %}
+  {% for mensaje in get_flashed_messages() %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert"
+    style="text-align: center; font-size:15px; background-color: #04C100; color: white; height: 50px">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
   <main>
-    <div class="container">
+    <div class="container-content">
       <div class="titulo">
         <p>Actualizar informacion restaurante</p>
       </div>
@@ -17,13 +36,13 @@
           <img src="{{restaurante.logo}}" alt="Logo restaurente">
         </picture>
         <div class="formulario">
-          <form action="">
+          <form action="{{url_for('rutas_restaurante.cambiar_informacion')}}" method="POST">
             <input type="text" name="nombre-restaurante" id="nombre-restaurante" placeholder="Nombre restaurante" value="{{restaurante.nombre_restaurante}}" required>
             <input type="text" name="especialidad" id="especialidad" placeholder="Especialidad" value="{{restaurante.especialidad}}" required>
             <input type="text" name="chef" id="chef" placeholder="Nombre chef principal" value="{{restaurante.chef_principal}}" required>
             <label for="colores">Elige un color representativo de tu restaurante:</label>
             <select name="colores" id="colores" required>
-            <option value="#FFF633">Amarillo</option>
+            <option selected value="#FFF633">Amarillo</option>
             <option value="#3374FF">Azul</option>
             <option value="#FF333C">Rojo</option>
             <option value="#28B463">Verde</option>

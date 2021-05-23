@@ -7,13 +7,19 @@
 {% endblock %}
 
 {% block body %}
+  {% for mensaje in get_flashed_messages() %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="text-align: center; font-size:15px; background-color: red; color: white">
+      <p>{{mensaje}}</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
     <main>
       <div class="container main-content">
         <div class="title-container">
           <h1>RestBit</h1>
         </div>
         <div class="formulario">
-          <form action="">
+          <form action="{{url_for('rutas_sesiones.login_restaurante')}}" method="POST">
             <input type="number" name="id-restaurante" id="id-restaurante_login" placeholder="Id restaurante" required>
             <input type="password" name="contraseña" id="contraseña_login" placeholder="Contraseña" required>
             <button type="submit">Login</button>

@@ -81,7 +81,7 @@ body{
 }
 
 @media (max-width: 768px) {
-    .container {
+    .container-content {
       display: none;
     }
 }
